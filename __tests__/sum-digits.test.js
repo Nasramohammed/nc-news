@@ -1,5 +1,59 @@
 const sumDigits = require('../katas/sum-digits');
 
+describe('sumDigits', () => {
+  describe('single digit', () => {
+
+    test('returns 1 if input is 1 and single digit', () => {
+      const input = 1;
+      const actual = sumDigits(input);
+      const expected = 1;
+  
+      expect(actual).toBe(expected);
+      
+    });
+  
+    test('returns 9 if input is 9 and single digit', () => {
+      const input = 9;
+      const actual = sumDigits(input);
+      const expected = 9;
+  
+      expect(actual).toBe(expected);
+      
+    });
+    
+  });
+
+  describe('multiple digits', () => {
+    test('input 99 output 18', () => {
+      const input = 99;
+      const actual = sumDigits(input);
+      const expected = 18;
+
+      expect(actual).toBe(expected);
+    });
+    test('input 123 output 6', () => {
+      const input = 123;
+      const actual = sumDigits(input);
+      const expected = 6;
+
+      expect(actual).toBe(expected);
+    });
+    
+  });
+
+  describe('special characters', () => {
+    test('ignore special characters', () => {
+      const input = 10.5;
+      const actual = sumDigits(input);
+      const expected = 6;
+
+      expect(actual).toBe(expected);
+    });
+    
+  });
+  
+});
+
 // Tests for sumDigits
 
 /*
